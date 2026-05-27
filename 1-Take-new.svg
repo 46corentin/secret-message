@@ -1,0 +1,93 @@
+<svg width="438" height="454" viewBox="0 0 438 454" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="438" height="454" fill="#f2ede8"/>
+
+  <!-- ── BOX RIGHT SIDE (3-D depth) ── -->
+  <path d="M335,218 L378,184 L378,454 L335,454 Z" fill="#c4bcb2" stroke="#1a1714" stroke-width="1.4"/>
+  <!-- Ribs on side panel -->
+  <line x1="349" y1="200" x2="349" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.35"/>
+  <line x1="363" y1="192" x2="363" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- ── BAG INSIDE BOX (drawn before front face so front covers lower bag) ── -->
+  <!-- Bag body -->
+  <rect x="108" y="200" width="180" height="254" fill="#c49068" stroke="#1a1714" stroke-width="1.3"/>
+  <!-- Bag top fold (branded area — appears through cutout) -->
+  <rect x="108" y="182" width="180" height="23" fill="#a87050" stroke="#1a1714" stroke-width="1.3"/>
+  <!-- Fold crease dashed -->
+  <line x1="108" y1="200" x2="288" y2="200" stroke="#1a1714" stroke-width="0.9" stroke-dasharray="4,2.5"/>
+  <!-- Bag texture lines (body) -->
+  <line x1="131" y1="204" x2="131" y2="450" stroke="#8a6040" stroke-width="0.55" opacity="0.4"/>
+  <line x1="160" y1="202" x2="160" y2="452" stroke="#8a6040" stroke-width="0.55" opacity="0.4"/>
+  <line x1="198" y1="202" x2="198" y2="452" stroke="#8a6040" stroke-width="0.55" opacity="0.4"/>
+  <line x1="236" y1="202" x2="236" y2="452" stroke="#8a6040" stroke-width="0.55" opacity="0.4"/>
+  <line x1="265" y1="204" x2="265" y2="450" stroke="#8a6040" stroke-width="0.55" opacity="0.4"/>
+  <!-- MASK LOGO printed on bag top — centred in cutout window -->
+  <g transform="translate(198,191) scale(0.52)">
+    <path d="M-48,0 Q-38,-18 -22,-12 Q0,-20 22,-12 Q38,-18 48,0 Q36,16 20,8 Q8,14 0,8 Q-8,14 -20,8 Q-36,16 -48,0 Z" fill="#1a1714"/>
+    <ellipse cx="-23" cy="-2" rx="11" ry="7" fill="#a87050"/>
+    <ellipse cx="23"  cy="-2" rx="11" ry="7" fill="#a87050"/>
+  </g>
+
+  <!-- ── BOX FRONT FACE (U-shape, leaves top-centre cutout open) ── -->
+  <path d="
+    M 50,218
+    L 50,454
+    L 335,454
+    L 335,218
+    L 302,218
+    L 302,208
+    L 94,208
+    L 94,218
+    Z
+  " fill="#d8d2c8" stroke="#1a1714" stroke-width="1.4"/>
+  <!-- Vertical ribs on front face -->
+  <line x1="94"  y1="220" x2="94"  y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.3"/>
+  <line x1="150" y1="220" x2="150" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.3"/>
+  <line x1="220" y1="220" x2="220" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.3"/>
+  <line x1="280" y1="220" x2="280" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.3"/>
+  <line x1="302" y1="220" x2="302" y2="454" stroke="#1a1714" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- ── BOX TOP LIPS (small flaps framing the cutout) ── -->
+  <!-- Left flap top face -->
+  <path d="M 50,208 L 58,200 L 96,200 L 94,208 Z" fill="#ccc4ba" stroke="#1a1714" stroke-width="1.2"/>
+  <!-- Right flap top face -->
+  <path d="M 302,208 L 304,200 L 338,200 L 335,208 Z" fill="#ccc4ba" stroke="#1a1714" stroke-width="1.2"/>
+  <!-- Cardboard thickness hint on left lip -->
+  <line x1="50" y1="213" x2="94" y2="213" stroke="#1a1714" stroke-width="0.7" opacity="0.5"/>
+  <!-- Cardboard thickness hint on right lip -->
+  <line x1="302" y1="213" x2="335" y2="213" stroke="#1a1714" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- ── MASK LOGO on box front face ── -->
+  <g transform="translate(192,330) scale(0.78)">
+    <path d="M-48,0 Q-38,-18 -22,-12 Q0,-20 22,-12 Q38,-18 48,0 Q36,16 20,8 Q8,14 0,8 Q-8,14 -20,8 Q-36,16 -48,0 Z" fill="#1a1714"/>
+    <ellipse cx="-23" cy="-2" rx="11" ry="7" fill="#d8d2c8"/>
+    <ellipse cx="23"  cy="-2" rx="11" ry="7" fill="#d8d2c8"/>
+  </g>
+
+  <!-- ── HAND: from upper right, reaching down into the cutout ── -->
+  <!-- Forearm -->
+  <path d="M438,18 C418,34 394,56 374,78 C360,94 348,112 340,130 C334,144 330,158 328,170" stroke="#1a1714" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Outer palm edge -->
+  <path d="M328,170 C325,180 322,190 320,198 C319,204 319,209 322,212" stroke="#1a1714" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+  <!-- Inner palm edge -->
+  <path d="M328,170 C324,178 320,188 318,196 C317,202 318,208 321,212" stroke="#1a1714" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- Thumb -->
+  <path d="M318,196 C312,193 306,191 303,196 C300,202 303,211 310,212 C315,213 319,210 319,204" stroke="#1a1714" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- Index finger -->
+  <path d="M322,212 C321,220 319,231 319,240 C319,246 322,249 325,247 C328,245 328,238 328,230 C327,222 325,214 323,212" stroke="#1a1714" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+  <!-- Middle finger -->
+  <path d="M323,212 C323,220 322,232 323,241 C324,247 327,250 330,248 C333,246 333,238 332,230 C331,221 329,213 327,211" stroke="#1a1714" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+  <!-- Ring finger -->
+  <path d="M327,211 C327,219 328,230 329,238 C330,244 333,246 336,244 C339,242 338,235 337,227 C336,219 334,211 331,209" stroke="#1a1714" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Pinky -->
+  <path d="M331,209 C332,217 334,226 334,233 C334,238 337,240 340,238 C343,236 342,229 341,222 C340,215 337,209 334,208" stroke="#1a1714" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+  <!-- Palm width close -->
+  <path d="M334,208 C332,204 328,202 324,203 C320,204 319,207 319,212" stroke="#1a1714" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Knuckle creases -->
+  <path d="M321,220 C323,219 326,219 327,220" stroke="#1a1714" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <path d="M327,218 C329,217 332,217 333,218" stroke="#1a1714" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <!-- Nail on index -->
+  <path d="M320,230 C322,228 325,228 326,230" stroke="#1a1714" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+</svg>
