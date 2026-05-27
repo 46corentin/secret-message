@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Message — discreet bathroom disposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #f2ede8;
+  --ink:     #1a1714;
+  --ink-mid: #5a5248;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 36px 48px 32px;
+}
+
+/* ── RULES ── */
+.rule { width: 100%; height: 1px; background: var(--ink); opacity: 0.75; margin: 20px 0; }
+
+/* ── HEADER ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.brand-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(38px, 5.5vw, 66px);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.header-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.35em;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.header-jp::before,
+.header-jp::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.5;
+}
+.header-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.38em;
+  color: var(--ink-mid);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header-tagline::before,
+.header-tagline::after {
+  content: '';
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.3;
+}
+
+/* ── SECTION LABEL ── */
+.section-label-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.jp-big {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+}
+.en-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+/* ── HOW TO USE GRID ── */
+.how-to-use-grid {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr 182px;
+  column-gap: 4px;
+  align-items: start;
+}
+
+/* ── STEP ── */
+.step { padding: 0 6px; }
+.step-num-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.step-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1;
+}
+.step-titles { display: flex; flex-direction: column; gap: 2px; }
+.step-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.step-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+
+/* Step illustration images */
+.step-illus {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px 0 10px;
+  /* background matches page exactly — no blend needed */
+}
+
+.caption-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 3px;
+}
+.caption-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-mid);
+}
+
+/* ── ARROW ── */
+.step-arrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 148px;
+}
+
+/* ── SIDEBAR BOX ── */
+.sidebar-box {
+  border: 1px solid var(--ink);
+  padding: 18px 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-left: 10px;
+  margin-top: 36px;
+}
+.sidebar-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+.sidebar-rule { width: 34px; height: 1px; background: var(--ink); }
+.sidebar-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+}
+.sidebar-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+}
+
+/* ── WHY NOT FLUSH ── */
+.why-flush-grid {
+  display: grid;
+  grid-template-columns: 148px 1fr 1fr 1fr 1fr 128px;
+  column-gap: 10px;
+  align-items: start;
+}
+.why-label { padding-right: 4px; }
+.why-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+.why-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  display: block;
+  margin-top: 4px;
+}
+.why-rule { width: 100%; height: 1px; background: var(--ink); opacity: 0.4; margin-top: 8px; }
+
+/* Bottom icons */
+.flush-icon { text-align: center; }
+.flush-icon img {
+  height: 68px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+.flush-icon-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.75;
+  display: block;
+  margin-top: 6px;
+}
+.flush-icon-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--ink-mid);
+  display: block;
+  margin-top: 1px;
+}
+
+/* ── QR BOX ── */
+.qr-box {
+  border: 1px solid var(--ink);
+  padding: 10px 10px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.qr-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.qr-en {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+.qr-mask {
+  width: 32px;
+  height: auto;
+}
+
+/* ── FOOTER ── */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding-top: 6px;
+}
+.footer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.footer-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--ink-mid);
+}
+
+/* ── RESPONSIVE ── */
+
+/* Tablet: 600–1020px — stack steps, 2-col icons */
+@media (max-width: 1020px) {
+  .page { padding: 32px 32px 28px; }
+
+  /* Header lines shrink to fit */
+  .header-jp::before,
+  .header-jp::after  { width: 48px; }
+  .header-tagline::before,
+  .header-tagline::after { width: 80px; }
+
+  /* Steps: 3 columns, no sidebar beside them */
+  .how-to-use-grid {
+    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    row-gap: 24px;
+  }
+  /* Sidebar drops below the 3 steps as a full-width banner */
+  .sidebar-box {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin: 8px 0 0;
+    padding: 16px 24px;
+  }
+  .sidebar-jp { line-height: 1.6; }
+
+  /* Why flush: label full-width, 4 icons in a row, QR full-width */
+  .why-flush-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+  }
+  .why-label { grid-column: 1 / -1; }
+  .qr-box    { grid-column: 1 / -1; flex-direction: row; justify-content: center; gap: 16px; align-items: center; }
+}
+
+/* Mobile: < 600px — everything single-column */
+@media (max-width: 599px) {
+  .page { padding: 24px 18px 20px; }
+
+  .brand-title { letter-spacing: 0.25em; }
+
+  .header-jp::before,
+  .header-jp::after  { width: 20px; }
+  .header-tagline::before,
+  .header-tagline::after { display: none; }
+
+  /* Steps stack vertically; hide horizontal arrows */
+  .how-to-use-grid {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+  .step-arrow {
+    padding-top: 0;
+    transform: rotate(90deg);
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+  .step { padding: 0; }
+  .step-illus { max-width: 320px; margin-left: auto; margin-right: auto; }
+
+  .sidebar-box {
+    grid-column: 1;
+    flex-direction: column;
+    margin: 8px 0 0;
+  }
+
+  /* Why flush: 2×2 grid for icons */
+  .why-flush-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 16px;
+  }
+  .why-label { grid-column: 1 / -1; }
+  .qr-box    { grid-column: 1 / -1; }
+
+  .jp-big  { font-size: 18px; }
+  .why-jp  { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════════════════════════════ HEADER ══════════════════════════════════ -->
+  <header class="header">
+    <div class="header-title-row">
+      <img src="Mask.png" alt="" class="mask-img" style="height:38px; width:auto;">
+      <h1 class="brand-title">Secret Message</h1>
+    </div>
+    <div class="header-jp">秘密のメッセージ</div>
+    <div class="header-tagline">discreet bathroom disposal</div>
+  </header>
+
+  <div class="rule"></div>
+
+  <!-- ══════════════════════════════ HOW TO USE ══════════════════════════════════ -->
+  <section>
+    <div class="section-label-row">
+      <span class="jp-big">使い方</span>
+      <span class="en-label">HOW TO USE</span>
+    </div>
+
+    <div class="how-to-use-grid">
+
+      <!-- ── STEP 1: TAKE ── -->
+      <div class="step">
+        <div class="step-num-row">
+          <span class="step-number">1.</span>
+          <div class="step-titles">
+            <span class="step-jp">取り出す</span>
+            <span class="step-en">TAKE</span>
+          </div>
+        </div>
+        <img src="1-Take.png" alt="Take one bag from the dispenser" class="step-illus">
+        <p class="caption-jp">ディスペンサーから<br>バッグを１枚取り出します。</p>
+        <p class="caption-en">Take one bag from the dispenser.</p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="step-arrow">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M1,6.5 L11,6.5 M7,2 L11,6.5 L7,11" stroke="#1a1714" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- ── STEP 2: USE & FOLD ── -->
+      <div class="step">
+        <div class="step-num-row">
+          <span class="step-number">2.</span>
+          <div class="step-titles">
+            <span class="step-jp">使って、折る</span>
+            <span class="step-en">USE &amp; FOLD</span>
+          </div>
+        </div>
+        <img src="2-UseFold.png" alt="Use and fold the bag" class="step-illus">
+        <p class="caption-jp">使用後、バッグの上部を<br>１〜２回折りたたみます。</p>
+        <p class="caption-en">After use, fold the top of the bag 1–2 times.</p>
+      </div>
+
+      <!-- Arrow -->
+      <div class="step-arrow">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M1,6.5 L11,6.5 M7,2 L11,6.5 L7,11" stroke="#1a1714" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- ── STEP 3: DISPOSE ── -->
+      <div class="step">
+        <div class="step-num-row">
+          <span class="step-number">3.</span>
+          <div class="step-titles">
+            <span class="step-jp">そのまま捨てる</span>
+            <span class="step-en">DISPOSE</span>
+          </div>
+        </div>
+        <img src="3-Dispose.png" alt="Dispose in the bin" class="step-illus">
+        <p class="caption-jp">そのままサニタリーボックスに<br>捨ててください。</p>
+        <p class="caption-en">Dispose of it in the waste bin.</p>
+      </div>
+
+      <!-- ── SIDEBAR BRAND BOX ── -->
+      <div class="sidebar-box">
+        <img src="Mask.png" alt="" class="mask-img" style="width:52px; height:auto;">
+        <div class="sidebar-name">Secret<br>Message</div>
+        <div class="sidebar-rule"></div>
+        <div class="sidebar-jp">流さず、<br>やさしさを<br>つなぐ。</div>
+        <div class="sidebar-en">A small action<br>that protects<br>our plumbing<br>and our planet.</div>
+      </div>
+
+    </div><!-- /how-to-use-grid -->
+  </section>
+
+  <div class="rule" style="margin-top:24px;"></div>
+
+  <!-- ══════════════════════════════ WHY NOT FLUSH ════════════════════════════════ -->
+  <section>
+    <div class="why-flush-grid">
+
+      <!-- Label -->
+      <div class="why-label">
+        <div class="why-jp">なぜ流してはいけないの？</div>
+        <span class="why-en">WHY NOT FLUSH?</span>
+        <div class="why-rule"></div>
+      </div>
+
+      <!-- Icon 1: Pipe -->
+      <div class="flush-icon">
+        <img src="Pipe.png" alt="Pipe clog">
+        <span class="flush-icon-jp">詰まりの原因になります</span>
+        <span class="flush-icon-en">It can cause clogs.</span>
+      </div>
+
+      <!-- Icon 2: Turtle -->
+      <div class="flush-icon">
+        <img src="Turtle.png" alt="Turtle — harms environment">
+        <span class="flush-icon-jp">環境にやさしくありません</span>
+        <span class="flush-icon-en">It harms the environment.</span>
+      </div>
+
+      <!-- Icon 3: House -->
+      <div class="flush-icon">
+        <img src="House.png" alt="House — be considerate">
+        <span class="flush-icon-jp">みんなのためのマナーです</span>
+        <span class="flush-icon-en">It's considerate.</span>
+      </div>
+
+      <!-- Icon 4: Plant -->
+      <div class="flush-icon">
+        <img src="Plant.png" alt="Thank you">
+        <span class="flush-icon-jp">ありがとうございます</span>
+        <span class="flush-icon-en">Thank you.</span>
+      </div>
+
+      <!-- QR code box -->
+      <div class="qr-box">
+        <span class="qr-jp">補充のご注文はこちら</span>
+        <span class="qr-en">SCAN TO REORDER</span>
+        <!-- QR code pattern -->
+        <svg viewBox="0 0 76 76" width="76" height="76" fill="none">
+          <rect x="3"  y="3"  width="20" height="20" fill="none" stroke="#1a1714" stroke-width="1.4"/>
+          <rect x="7"  y="7"  width="12" height="12" fill="#1a1714"/>
+          <rect x="53" y="3"  width="20" height="20" fill="none" stroke="#1a1714" stroke-width="1.4"/>
+          <rect x="57" y="7"  width="12" height="12" fill="#1a1714"/>
+          <rect x="3"  y="53" width="20" height="20" fill="none" stroke="#1a1714" stroke-width="1.4"/>
+          <rect x="7"  y="57" width="12" height="12" fill="#1a1714"/>
+          <rect x="28" y="3"  width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="3"  width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="3"  width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="9"  width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="9"  width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="15" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="15" width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="15" width="4" height="4" fill="#1a1714"/>
+          <rect x="3"  y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="9"  y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="17" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="53" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="61" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="69" y="28" width="4" height="4" fill="#1a1714"/>
+          <rect x="3"  y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="13" y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="40" y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="53" y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="65" y="35" width="4" height="4" fill="#1a1714"/>
+          <rect x="3"  y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="9"  y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="21" y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="57" y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="69" y="42" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="53" width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="53" width="4" height="4" fill="#1a1714"/>
+          <rect x="48" y="53" width="4" height="4" fill="#1a1714"/>
+          <rect x="60" y="53" width="4" height="4" fill="#1a1714"/>
+          <rect x="69" y="53" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="60" width="4" height="4" fill="#1a1714"/>
+          <rect x="44" y="60" width="4" height="4" fill="#1a1714"/>
+          <rect x="54" y="60" width="4" height="4" fill="#1a1714"/>
+          <rect x="65" y="60" width="4" height="4" fill="#1a1714"/>
+          <rect x="28" y="68" width="4" height="4" fill="#1a1714"/>
+          <rect x="36" y="68" width="4" height="4" fill="#1a1714"/>
+          <rect x="48" y="68" width="4" height="4" fill="#1a1714"/>
+          <rect x="62" y="68" width="4" height="4" fill="#1a1714"/>
+        </svg>
+        <img src="Mask.png" alt="" class="qr-mask">
+      </div>
+
+    </div><!-- /why-flush-grid -->
+  </section>
+
+  <div class="rule" style="margin-top:20px;"></div>
+
+  <!-- ════════════════════════════════ FOOTER ═════════════════════════════════════ -->
+  <footer class="footer">
+    <img src="Mask.png" alt="" class="mask-img" style="height:28px; width:auto;">
+    <div class="footer-title">Secret Message</div>
+    <div class="footer-tagline">discreet bathroom disposal</div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
