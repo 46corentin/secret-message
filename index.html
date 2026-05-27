@@ -93,8 +93,8 @@ html, body {
 /* ── HOW TO USE GRID ── */
 .how-to-use-grid {
   display: grid;
-  grid-template-columns: 1fr 24px 1fr 24px 1fr 182px;
-  column-gap: 4px;
+  grid-template-columns: 1fr 1fr 1fr 182px;
+  column-gap: 24px;
   align-items: start;
 }
 
@@ -285,6 +285,13 @@ html, body {
   text-transform: uppercase;
   font-weight: 400;
 }
+.footer-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--ink-mid);
+}
 .footer-tagline {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
@@ -306,7 +313,7 @@ html, body {
 
   /* Steps: 3 columns, no sidebar beside them */
   .how-to-use-grid {
-    grid-template-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 24px;
   }
   /* Sidebar drops below the 3 steps as a full-width banner */
@@ -413,13 +420,6 @@ html, body {
         <p class="caption-en">Take one bag from the dispenser.</p>
       </div>
 
-      <!-- Arrow -->
-      <div class="step-arrow">
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-          <path d="M1,6.5 L11,6.5 M7,2 L11,6.5 L7,11" stroke="#1a1714" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-      </div>
-
       <!-- ── STEP 2: USE & FOLD ── -->
       <div class="step">
         <div class="step-num-row">
@@ -432,13 +432,6 @@ html, body {
         <img src="2-UseFold.png" alt="Use and fold the bag" class="step-illus">
         <p class="caption-jp">使用後、バッグの上部を<br>１〜２回折りたたみます。</p>
         <p class="caption-en">After use, fold the top of the bag 1–2 times.</p>
-      </div>
-
-      <!-- Arrow -->
-      <div class="step-arrow">
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-          <path d="M1,6.5 L11,6.5 M7,2 L11,6.5 L7,11" stroke="#1a1714" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
       </div>
 
       <!-- ── STEP 3: DISPOSE ── -->
@@ -576,6 +569,7 @@ html, body {
   <footer class="footer">
     <img src="Mask.png" alt="" class="mask-img" style="height:28px; width:auto;">
     <div class="footer-title">Secret Message</div>
+    <div class="footer-jp">秘密のメッセージ</div>
     <div class="footer-tagline">discreet bathroom disposal</div>
   </footer>
 
